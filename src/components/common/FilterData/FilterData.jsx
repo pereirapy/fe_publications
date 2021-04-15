@@ -114,7 +114,7 @@ class FilterData extends React.Component {
                   rows={6}
                 >
                   {map(
-                    ({ authorId, author: {firstName = '', lastName = ''} }) => (
+                    ({ authorId, author: {firstName, lastName } }) => (
                       <Form.Group
                         controlId={`authors${authorId}`}
                         key={authorId}
