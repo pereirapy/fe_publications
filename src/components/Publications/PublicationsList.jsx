@@ -15,8 +15,9 @@ import ReactPlaceholder from 'react-placeholder'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
-//firstName:ASC,
+
 const sortDefault = `publications.createdAt:`
+const sortDefaultlast = `,firstName:ASC`
 
 class Publications extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Publications extends React.Component {
       iconSort: faArrowDown,
       creadtedAtSort: 'DESC',
       queryParams: {
-        sort: `${sortDefault}DESC`,
+        sort: `${sortDefault}DESC${sortDefaultlast}`,
         perPage: RECORDS_PER_PAGE,
         currentPage: 1,
         filters: JSON.stringify({
@@ -91,7 +92,7 @@ class Publications extends React.Component {
   toggleCreadtedSort() {
     const creadtedAtSort = this.state.creadtedAtSort === 'DESC' ? 'ASC' : 'DESC'
     const iconSort = creadtedAtSort === 'DESC' ? faArrowDown : faArrowUp
-    const sort = `${sortDefault}${creadtedAtSort}`
+    const sort = `${sortDefault}${creadtedAtSort}${sortDefaultlast}`
     this.setState({ creadtedAtSort, iconSort })
     this.handleGetAll({ sort })
   }

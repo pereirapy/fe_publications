@@ -4,7 +4,7 @@ const NoRecords = ({ cols }) => {
   return (
     <tr>
       <td className="text-center" colSpan={cols}>
-        {'noRecords'}
+        No records
       </td>
     </tr>
   )

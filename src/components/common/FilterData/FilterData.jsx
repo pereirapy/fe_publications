@@ -100,7 +100,7 @@ class FilterData extends React.Component {
         </Col>
         <Col className="text-center text-muted">{error}</Col>
         <Col className="text-center text-muted">
-          {!loading && noData && 'common:noData'}
+          {!loading && noData && 'No data'}
         </Col>
         {(loading || !isEmpty(checksAuthors)) && !error && (
           <Col className="mb-4">
